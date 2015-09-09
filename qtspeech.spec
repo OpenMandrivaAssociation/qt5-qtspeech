@@ -37,6 +37,7 @@ Development files (Headers etc.) for %{name}.
 Summary: Example code for the %{name} library
 Group: Development/C
 Requires: %{devname} = %{EVRD}
+BuildRequires: pkgconfig(Qt5Widgets)
 
 %description examples
 Example code for the %{name} library
