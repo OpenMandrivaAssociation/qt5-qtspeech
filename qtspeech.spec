@@ -4,11 +4,11 @@
 
 Name: qtspeech
 Version: 5.5.0
-Release: 1
+Release: 2
 Source0: qtspeech-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: Qt text to speech library
-URL: http://gitorious.org/qt-speech
+URL: https://github.com/qtproject/qtspeech
 License: GPL
 Group: System/Libraries
 BuildRequires: qmake5
