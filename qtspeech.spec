@@ -4,7 +4,7 @@
 
 Name: qtspeech
 Version: 5.5.0
-Release: 2
+Release: 3
 Source0: qtspeech-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: Qt text to speech library
@@ -48,7 +48,8 @@ Example code for the %{name} library
 	-version %{version} \
 	-private \
 	-module QtTextToSpeech
-qmake-qt5 *.pro
+
+%qmake_qt5 *.pro
 
 %build
 %make
