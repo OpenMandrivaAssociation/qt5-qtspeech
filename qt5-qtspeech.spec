@@ -2,11 +2,11 @@
 %define libname %mklibname qtspeech %{major}
 %define devname %mklibname qtspeech -d
 
-Name: qtspeech
-Version: 5.5.0
-Release: 3
+Name:	qt5-qtspeech
+Version:5.5.0
+Release: 1
 Source0: qtspeech-%{version}.tar.xz
-Source1000: %{name}.rpmlintrc
+Source100: %{name}.rpmlintrc
 Summary: Qt text to speech library
 URL: https://github.com/qtproject/qtspeech
 License: GPL
@@ -43,7 +43,7 @@ BuildRequires: pkgconfig(Qt5Widgets)
 Example code for the %{name} library
 
 %prep
-%setup -q
+%setup -qn qtspeech-%{version}
 %{_libdir}/qt5/bin/syncqt.pl \
 	-version %{version} \
 	-private \
@@ -51,11 +51,13 @@ Example code for the %{name} library
 
 %qmake_qt5 *.pro
 
+
 %build
 %make
 
 %install
 make install install_docs INSTALL_ROOT="%{buildroot}"
+find "%{buildroot}" -type f -name '*.prl' -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
