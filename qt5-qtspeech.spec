@@ -4,7 +4,7 @@
 
 Name:	qt5-qtspeech
 Version:5.5.0
-Release: 1
+Release: 2
 Source0: qtspeech-%{version}.tar.xz
 Source100: %{name}.rpmlintrc
 Summary: Qt text to speech library
