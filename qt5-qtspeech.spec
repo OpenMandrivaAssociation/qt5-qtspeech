@@ -3,13 +3,17 @@
 %define devname %mklibname qtspeech -d
 
 Name:	qt5-qtspeech
-Version:5.5.0
-Release: 2
-Source0: qtspeech-%{version}.tar.xz
+Version: 5.7.0
+Release: 1
+# There's a lot of confusion as to where upstream releases live.
+# The github project exists, but doesn't have tags or release branches.
+# This tarball is taken from the openSUSE RPM, which seems to have the
+# most current version claimed to be a release (at least by them).
+Source0: qtspeech-opensource-src-%{version}.tar.xz
 Source100: %{name}.rpmlintrc
 Summary: Qt text to speech library
 URL: https://github.com/qtproject/qtspeech
-License: GPL
+License: LGPL-2.1-with-Qt-Company-Qt-exception-1.1 or LGPL-3.0-with-Qt-Company-Qt-exception-1.1
 Group: System/Libraries
 BuildRequires: qmake5
 BuildRequires: pkgconfig(speech-dispatcher)
@@ -43,7 +47,7 @@ BuildRequires: pkgconfig(Qt5Widgets)
 Example code for the %{name} library
 
 %prep
-%setup -qn qtspeech-%{version}
+%setup -qn qtspeech-opensource-src-%{version}
 %{_libdir}/qt5/bin/syncqt.pl \
 	-version %{version} \
 	-private \
@@ -61,6 +65,7 @@ find "%{buildroot}" -type f -name '*.prl' -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
+%{_libdir}/qt5/plugins/texttospeech
 
 %files -n %{devname}
 %{_includedir}/*
