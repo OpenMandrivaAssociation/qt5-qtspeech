@@ -4,7 +4,7 @@
 
 Name:	qt5-qtspeech
 Version: 5.7.0
-Release: 1
+Release: 2
 # There's a lot of confusion as to where upstream releases live.
 # The github project exists, but doesn't have tags or release branches.
 # This tarball is taken from the openSUSE RPM, which seems to have the
