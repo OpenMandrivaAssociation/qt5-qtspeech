@@ -48,6 +48,8 @@ Example code for the %{name} library
 
 %prep
 %setup -qn qtspeech-opensource-src-%{version}
+rm examples/*.pro
+
 %{_libdir}/qt5/bin/syncqt.pl \
 	-version %{version} \
 	-private \
@@ -62,6 +64,8 @@ Example code for the %{name} library
 %install
 make install install_docs INSTALL_ROOT="%{buildroot}"
 find "%{buildroot}" -type f -name '*.prl' -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+
+mv examples %{buildroot}%{_libdir}/qt5/
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
