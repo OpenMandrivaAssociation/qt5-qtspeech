@@ -1,15 +1,12 @@
 %define major 5
 %define libname %mklibname qtspeech %{major}
 %define devname %mklibname qtspeech -d
+%define beta beta
 
 Name:	qt5-qtspeech
 Version: 5.8.0
-Release: 0.20160904.1
-# There's a lot of confusion as to where upstream releases live.
-# The github project exists, but doesn't have tags or release branches.
-# This tarball is taken from the openSUSE RPM, which seems to have the
-# most current version claimed to be a release (at least by them).
-Source0: qtspeech-opensource-src-%{version}.tar.xz
+Release: 0.%{beta}.1
+Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/qtspeech-opensource-src-%{version}-%{beta}.tar.xz
 Source100: %{name}.rpmlintrc
 Summary: Qt text to speech library
 URL: https://github.com/qtproject/qtspeech
@@ -47,7 +44,7 @@ BuildRequires: pkgconfig(Qt5Widgets)
 Example code for the %{name} library
 
 %prep
-%setup -qn qtspeech-opensource-src-%{version}
+%setup -qn qtspeech-opensource-src-%{version}-%{beta}
 rm examples/*.pro
 
 %{_libdir}/qt5/bin/syncqt.pl \
