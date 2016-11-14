@@ -4,7 +4,7 @@
 
 Name:	qt5-qtspeech
 Version: 5.7.0
-Release: 2
+Release: 3
 # There's a lot of confusion as to where upstream releases live.
 # The github project exists, but doesn't have tags or release branches.
 # This tarball is taken from the openSUSE RPM, which seems to have the
@@ -20,14 +20,14 @@ BuildRequires: pkgconfig(speech-dispatcher)
 BuildRequires: pkgconfig(Qt5Core)
 
 %description
-Qt text to speech library
+Qt text to speech library.
 
 %package -n %{libname}
 Summary: Qt text to speech library
 Group: System/Libraries
 
 %description -n %{libname}
-Qt text to speech library
+Qt text to speech library.
 
 %package -n %{devname}
 Summary: Development files for %{name}
@@ -44,7 +44,7 @@ Requires: %{devname} = %{EVRD}
 BuildRequires: pkgconfig(Qt5Widgets)
 
 %description examples
-Example code for the %{name} library
+Example code for the %{name} library.
 
 %prep
 %setup -qn qtspeech-opensource-src-%{version}
