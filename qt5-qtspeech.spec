@@ -1,10 +1,10 @@
 %define major 5
 %define libname %mklibname qtspeech %{major}
 %define devname %mklibname qtspeech -d
-%define beta %{nil}
+%define beta alpha
 
 Name:	qt5-qtspeech
-Version: 5.8.0
+Version: 5.9.0
 Release: 0.%{beta}.1
 %if "%{beta}" != "%{nil}"
 Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/qtspeech-opensource-src-%{version}-%{beta}.tar.xz
