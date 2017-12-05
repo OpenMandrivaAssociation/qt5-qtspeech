@@ -1,7 +1,7 @@
 %define major 5
 %define libname %mklibname qtspeech %{major}
 %define devname %mklibname qtspeech -d
-%define beta rc2
+%define beta rc3
 
 Name:	qt5-qtspeech
 Version: 5.10.0
