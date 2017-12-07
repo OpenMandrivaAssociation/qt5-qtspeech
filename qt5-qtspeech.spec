@@ -1,7 +1,7 @@
 %define major 5
 %define libname %mklibname qtspeech %{major}
 %define devname %mklibname qtspeech -d
-%define beta rc3
+%define beta %{nil}
 
 Name:	qt5-qtspeech
 Version: 5.10.0
@@ -10,7 +10,7 @@ Version: 5.10.0
 Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%(echo %{beta} |sed -e "s,1$,,")/submodules/%{qttarballdir}.tar.xz
 Release: 0.%{beta}.1
 %else
-%define qttarballdir qtspeech-opensource-src-%{version}
+%define qttarballdir qtspeech-everywhere-src-%{version}
 Source0: http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 Release: 1
 %endif
