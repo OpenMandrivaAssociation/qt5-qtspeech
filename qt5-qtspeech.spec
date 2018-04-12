@@ -22,6 +22,8 @@ Group: System/Libraries
 BuildRequires: qmake5
 BuildRequires: pkgconfig(speech-dispatcher)
 BuildRequires: pkgconfig(Qt5Core)
+# For the Provides: generator
+BuildRequires:	cmake >= 3.11.0-1
 
 %description
 Qt text to speech library
