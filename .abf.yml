@@ -1,2 +1,4 @@
+removed_sources:
+  qtspeech-opensource-src-5.9.2.tar.xz: 0b42fa7edd57ae06640d670f58d7af3cfb7cbef4
 sources:
-  qtspeech-opensource-src-5.7.0.tar.xz: dd2d653d1bcf83326bb7098a6f20d4588c9c935e
+  qtspeech-opensource-src-5.9.6.tar.xz: 76e95ca58c92921dc762b7b79f80c5a69b12ecbc
