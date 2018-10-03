@@ -58,7 +58,6 @@ rm examples/*.pro
 
 %{_libdir}/qt5/bin/syncqt.pl \
 	-version %{version} \
-	-private \
 	-module QtTextToSpeech
 
 %qmake_qt5 *.pro
