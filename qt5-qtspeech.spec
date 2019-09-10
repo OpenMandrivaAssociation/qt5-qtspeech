@@ -4,15 +4,15 @@
 %define beta %{nil}
 
 Name: qt5-qtspeech
-Version: 5.13.0
+Version:	5.13.1
 %if "%{beta}" != "%{nil}"
 %define qttarballdir qtspeech-everywhere-src-%{version}-%{beta}
 Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%(echo %{beta} |sed -e "s,1$,,")/submodules/%{qttarballdir}.tar.xz
-Release: 0.%{beta}.1
+Release:	1
 %else
 %define qttarballdir qtspeech-everywhere-src-%{version}
 Source0: http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
-Release: 2
+Release:	1
 %endif
 Source100: %{name}.rpmlintrc
 Summary: Qt text to speech library
