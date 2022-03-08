@@ -10,13 +10,13 @@ Version:	5.15.3
 Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 Release:	0.%{beta}.1
 %else
-%define qttarballdir qtspeech-everywhere-src-5.15.2
-Source0: http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
-Release:	1
+%define qttarballdir qtspeech-everywhere-opensource-src-%{version}
+Source0: http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
+Release:	2
 %endif
 Source100: %{name}.rpmlintrc
 # From KDE
-Patch1000:	0001-Bump-version.patch
+Patch1000:	0001-Reverse-list-of-voices-before-returning-from-Speech-.patch
 Summary: Qt text to speech library
 URL: https://github.com/qtproject/qtspeech
 License: LGPL-2.1-with-Qt-Company-Qt-exception-1.1 or LGPL-3.0-with-Qt-Company-Qt-exception-1.1
@@ -58,7 +58,7 @@ BuildRequires: pkgconfig(Qt5Widgets)
 Example code for the %{name} library.
 
 %prep
-%autosetup -n %{qttarballdir} -p1
+%autosetup -n %(echo %{qttarballdir}|sed -e 's,-opensource,,') -p1
 rm examples/*.pro
 
 %{_libdir}/qt5/bin/syncqt.pl \
