@@ -1,4 +1,4 @@
-From c8a1dadc46ccdbeaef45aa805a9dc98d4b3220bd Mon Sep 17 00:00:00 2001
+From e76b23ad707077647cdb4282cf35a71776efa0f0 Mon Sep 17 00:00:00 2001
 From: Jeremy Whiting <jpwhiting@kde.org>
 Date: Tue, 8 Feb 2022 11:04:41 -0700
 Subject: [PATCH] Reverse list of voices before returning from
@@ -32,5 +32,5 @@ index 6eb74b8..bcc7dd1 100644
  
  // We have no way of knowing our own client_id since speech-dispatcher seems to be incomplete
 -- 
-2.36.1
+2.37.0
 
