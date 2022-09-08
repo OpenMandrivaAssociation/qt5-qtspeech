@@ -4,7 +4,7 @@
 %define beta %{nil}
 
 Name: qt5-qtspeech
-Version:	5.15.5
+Version:	5.15.6
 %if "%{beta}" != "%{nil}"
 %define qttarballdir qtspeech-everywhere-src-%{version}-%{beta}
 Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
