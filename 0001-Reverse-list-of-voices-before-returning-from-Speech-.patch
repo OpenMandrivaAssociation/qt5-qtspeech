@@ -1,4 +1,4 @@
-From d32f4a479d38a11f547598004b975f4356424a16 Mon Sep 17 00:00:00 2001
+From 255845e2b2e605363762be25932d92fc10d32749 Mon Sep 17 00:00:00 2001
 From: Jeremy Whiting <jpwhiting@kde.org>
 Date: Tue, 8 Feb 2022 11:04:41 -0700
 Subject: [PATCH] Reverse list of voices before returning from
