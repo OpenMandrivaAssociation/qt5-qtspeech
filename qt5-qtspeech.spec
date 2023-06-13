@@ -4,7 +4,7 @@
 %define beta %{nil}
 
 Name: qt5-qtspeech
-Version:	5.15.9
+Version:	5.15.10
 %if "%{beta}" != "%{nil}"
 %define qttarballdir qtspeech-everywhere-src-%{version}-%{beta}
 Source0: http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
@@ -16,7 +16,7 @@ Release:	1
 %endif
 Source100: %{name}.rpmlintrc
 # From KDE
-Patch1000:	0001-Reverse-list-of-voices-before-returning-from-Speech-.patch
+Patch1001:	0001-Reverse-list-of-voices-before-returning-from-Speech-.patch
 Summary: Qt text to speech library
 URL: https://github.com/qtproject/qtspeech
 License: LGPL-2.1-with-Qt-Company-Qt-exception-1.1 or LGPL-3.0-with-Qt-Company-Qt-exception-1.1
